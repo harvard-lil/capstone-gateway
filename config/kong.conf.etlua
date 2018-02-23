@@ -143,9 +143,11 @@ ssl = off                        # Determines if Nginx should be listening for
 #http2 = off                     # Enables HTTP2 support for HTTPS traffic on
                                  # the `proxy_listen_ssl` address.
 
+client_ssl = on
 #client_ssl = off                # Determines if Nginx should send client-side
                                  # SSL certificates when proxying requests.
 
+client_ssl_cert = tmp/env/KONG_CLIENT_SSL_CERT
 #client_ssl_cert =               # If `client_ssl` is enabled, the absolute path
                                  # to the client SSL certificate for the
                                  # `proxy_ssl_certificate` directive. Note that
@@ -153,6 +155,7 @@ ssl = off                        # Determines if Nginx should be listening for
                                  # and currently cannot be configured on a
                                  # per-API basis.
 
+client_ssl_cert_key = tmp/env/KONG_CLIENT_SSL_CERT_KEY
 #client_ssl_cert_key =           # If `client_ssl` is enabled, the absolute path
                                  # to the client SSL key for the
                                  # `proxy_ssl_certificate_key` address. Note
